@@ -1,0 +1,157 @@
+<! DOCTYPE html>
+<html>
+<head>
+    <title>我的 AUDI 8Y S3</title>
+    
+    <style>
+        body  {
+            background-color:#111;
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1  {
+            color: #00aaff;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        img  {
+            width: 500px;
+            border-redius: 15px;
+        }
+        .spec {
+        background-color: #222;
+        padding: 20px;
+        border-radius: 15px;
+        width: 460px;
+        margin-bottom: 20px;
+        }
+        .mods {
+        background-color: #222;
+        padding: 20px;
+        border-radius: 15px;
+        width: 460px;
+        margin-bottom: 20px;
+        }
+
+        .maintenance {
+        background-color: #222;
+        padding: 20px;
+        border-radius: 15px;
+        width: 460px;
+        margin-bottom: 20px;
+        }
+
+        .cost {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 15px;
+            width: 460px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .spec,
+            .mods,
+            .maintenance,
+            .cost {
+                width: 90%;
+            }
+
+            img {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 28px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+    <body>
+        <h1>2021 AUDI 8Y S3 SPORTBACK</h1>
+        <p>這是我的AUDI 8Y S3</p>
+    <script>
+        function calculateTotal() {
+            let EVENTURI = 60000;
+            let DO88 = 53600;
+            let CT = 109000;
+            let BBS = 250000;
+            let karbel = 27500;
+            let Milltek = 46000;
+            let AKRAPOVIC = 195000;
+            let KW_V3 = 92000;
+            let CMST = 104000;
+
+            let total = EVENTURI + DO88 + CT + 
+            BBS + karbel + Milltek + AKRAPOVIC + KW_V3 + CMST;
+            
+            document.getElementById("total").innerText =
+            "總計: " + total + " 元";
+        }
+    </script>
+    </body>
+    </html>
+    <P>引擎:2.0 TSI</P>
+    <p>變速箱:DSG</p>
+    <p>目前正在進行改裝</p>
+
+    <img  src="AUDI 8Y S3 MTM.jpeg"  alt="我的 AUDI 8Y S3">
+    <h2>車輛規格</h2>
+
+    <div class="spec">
+        <p>車型:AUDI 8Y S3</p>
+        <P>引擎:2.0 TSI</P>
+        <P>變速箱:DSG</P>
+        <P>驅動:四輪驅動</P>
+       </div>
+    <h2>我的改裝</h2>
+
+    <div class="mods">
+         <ul>
+            <li>EVENTURI 進氣</li>
+            <li>DO88 加大中冷</li>
+            <li>CT Design碳纖維空力套件</li>
+            <li>BBS FIR 19吋鍛造鋁圈</li>
+            <li>karbel碳纖維後下擾流</li>
+            <li>Milltek直通當派</li>
+            <li>AKRAPOVIC鈦合金中尾段排氣管</li>
+            <li>KW V3避震器</li>
+            <li>CMST乾式蜂巢碳纖維引擎蓋</li>
+            <li>CMST碳纖維蜂巢前風刀</li>
+         </ul>
+    </div>
+
+    <h2>保養紀錄</h2>
+
+    <div class="maintenance"
+        <p>60,000 km 更換機油</p>
+        <p>60,000 km 更換DSG油</p>
+        <p>70,000 km 更換火星塞</p>
+        <p>80,000 km 更換空氣濾芯</p>
+    </div>
+
+    <h2>改裝花費</h2>
+
+    <div class="cost">
+        <p>EVENTURI進氣:60000 元</p>
+        <p>DO88加大中冷BigPack全套:53600 元</p>
+        <p>CT Design碳纖維空力套件:109000 元</p>
+        <p>BBS FIR19吋鍛造鋁圈:250000 元</p>
+        <P>karbel碳纖維後下擾流:27500 元</P>
+        <p>Milltek直通當派:46000 元</p>
+        <p>AKRAPOVIC鈦合金中尾段排氣管:195000 元</p>
+        <P>KW V3避震器:92000 元</P>
+        <P>CMST乾式蜂巢碳纖維:104000 元</P>
+        
+
+        <button onclick="calculateTotal()">計算總花費</button>
+
+        <h3 id="total">總計:0 元</h3>
+    </div>
+       
