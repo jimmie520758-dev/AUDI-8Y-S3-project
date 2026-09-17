@@ -40,6 +40,68 @@
             width: 460px;
             margin-bottom: 20px;
         }
+        .cost label {
+            display: block;
+            background-color: #333;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .overview {
+            width: 460px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+    }
+
+        .overview-card {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+    }
+
+        .overview-card span {
+            display: block;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 8px;
+    }
+
+        .overview-card strong {
+            display: block;
+            font-size: 20px;
+            color: #00aaff;
+    }
+
+        @media (max-width: 600px) {
+            .overview {
+                width: 90%;
+                grid-template-columns: 1fr;
+    }
+}
+        .cost label:hover {
+            background-color: #444;
+        }
+
+        .cost input[type="checkbox"] {
+            transform: scale(1.3);
+            margin-right: 10px;
+        }
+
+        .cost input[type="checkbox"]:checked {
+            accent-color: #00aaff;
+        }
+        #total {
+            color: #00aaff;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }            
 
         @media (max-width: 600px) {
             .spec,
@@ -60,24 +122,263 @@
  
         }
        
+       .category-buttons {
+    width: 460px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.category-buttons button {
+    background-color: #222;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.category-buttons button:hover {
+    background-color: #00aaff;
+}
+
+@media (max-width: 600px) {
+    .category-buttons {
+        width: 90%;
+    }
+}
+
+#searchInput {
+    width: 430px;
+    padding: 14px;
+    margin-bottom: 15px;
+    background-color: #222;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #00aaff;
+}
+
+@media (max-width: 600px) {
+    #searchInput {
+        width: calc(90% - 30px);
+    }
+
+    .hero {
+    width: 90%;
+    height: 400px;
+}
+
+.hero-overlay {
+    left: 25px;
+    bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 32px;
+}
+
+.hero h2 {
+    font-size: 20px;
+}
+}
+
+
+/* =========================
+   Audi S3 Racing Style
+========================= */
+
+body {
+    background:
+        linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.96)),
+        #111;
+}
+
+h1 {
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+}
+
+h2 {
+    width: 460px;
+    margin-top: 25px;
+    padding-left: 12px;
+    border-left: 4px solid #e00000;
+    box-sizing: border-box;
+}
+
+.spec,
+.mods,
+.maintenance,
+.cost,
+.overview-card {
+    border: 1px solid #333;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.cost label {
+    position: relative;
+    border: 1px solid #333;
+    transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.cost label:hover {
+    transform: translateX(5px);
+    border-color: #e00000;
+}
+
+.cost label:has(input:checked) {
+    border-color: #e00000;
+    background-color: #2b1818;
+    box-shadow: 0 0 12px rgba(224, 0, 0, 0.2);
+}
+
+.cost input[type="checkbox"]:checked {
+    accent-color: #e00000;
+}
+
+button {
+    background-color: #e00000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #ff2020;
+    transform: translateY(-2px);
+}
+
+.category-buttons button {
+    background-color: #222;
+    border: 1px solid #444;
+}
+
+.category-buttons button:hover {
+    background-color: #e00000;
+    border-color: #e00000;
+}
+
+#total,
+#overview-total {
+    text-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
+}
+
+.hero {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.05)
+    );
+}
+
+.hero-overlay {
+    position: absolute;
+    z-index: 2;
+    left: 45px;
+    bottom: 45px;
+}
+
+.hero-subtitle {
+    color: #e00000;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 0;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.hero h2 {
+    width: auto;
+    border-left: none;
+    padding-left: 0;
+    margin: 5px 0 15px;
+    font-size: 28px;
+    color: #00aaff;
+    letter-spacing: 6px;
+}
+
+.hero-description {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero-status {
+    display: inline-block;
+    background-color: #e00000;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
     </style>
 </head>
     <body>
-        <h1>2021 AUDI 8Y S3 SPORTBACK</h1>
-        <p>這是我的AUDI 8Y S3</p>
-    <script>
-        function calculateTotal() {
-            const mods = [60000, 53600, 109000, 250000, 27500, 46000, 195000, 92000, 104000];
-            const total = mods.reduce((sum, price) => sum + price, 0);
-            document.getElementById("total").innerText = "總計: " + total.toLocaleString() + " 元";
-   }
-    </script>
-    
-    <p>引擎:2.0 TSI</p>
-    <p>變速箱:DSG</p>
-    <p>目前正在進行改裝</p>
+        <section class="hero">
 
-    <img src="audi-8y-s3-mtm.jpeg"  alt="我的 audi 8y s3">
+    <img src="audi-8y-s3-mtm.jpeg" alt="我的 Audi 8Y S3">
+
+    <div class="hero-overlay">
+
+        <p class="hero-subtitle">MY PROJECT CAR</p>
+
+        <h1>2021 AUDI 8Y S3</h1>
+
+        <h2>SPORTBACK</h2>
+
+        <p class="hero-description">
+            2.0 TSI · DSG · QUATTRO
+        </p>
+
+        <p class="hero-status">
+            CURRENTLY MODIFIED
+        </p>
+
+    </div>
+
+</section>
     <h2>車輛規格</h2>
 
     <div class="spec">
@@ -87,20 +388,32 @@
         <p>驅動:四輪驅動</p>
         <p>馬力:310 PS</p>
        </div>
+       
+    <h2>改裝總覽</h2>
+
+<div class="overview">
+
+    <div class="overview-card">
+        <span>已選改裝</span>
+        <strong id="mod-count">0 項</strong>
+    </div>
+
+    <div class="overview-card">
+        <span>改裝總額</span>
+        <strong id="overview-total">0 元</strong>
+    </div>
+
+    <div class="overview-card">
+        <span>目前里程</span>
+        <strong>2,000 km</strong>
+    </div>
+
+</div>
+    
     <h2>我的改裝</h2>
 
     <div class="mods">
-         <ul>
-            <li>EVENTURI 進氣</li>
-            <li>DO88 加大中冷</li>
-            <li>CT Design碳纖維空力套件</li>
-            <li>BBS FIR 19吋鍛造鋁圈</li>
-            <li>karbel碳纖維後下擾流</li>
-            <li>Milltek直通當派</li>
-            <li>AKRAPOVIC鈦合金中尾段排氣管</li>
-            <li>KW V3避震器</li>
-            <li>CMST乾式蜂巢碳纖維引擎蓋</li>
-            <li>CMST碳纖維蜂巢前風刀</li>
+         <ul id="mods-list">
          </ul>
     </div>
 
@@ -115,23 +428,218 @@
 
     <h2>改裝花費</h2>
 
-    <div class="cost">
-        <p>EVENTURI進氣:60000 元</p>
-        <p>DO88加大中冷BigPack全套:53600 元</p>
-        <p>CT Design碳纖維空力套件:109000 元</p>
-        <p>BBS FIR19吋鍛造鋁圈:250000 元</p>
-        <p>karbel碳纖維後下擾流:27500 元</p>
-        <p>Milltek直通當派:46000 元</p>
-        <p>AKRAPOVIC鈦合金中尾段排氣管:195000 元</p>
-        <p>KW V3避震器:92000 元</p>
-        <p>CMST乾式蜂巢碳纖維:104000 元</p>
-        
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="🔍 搜尋改裝，例如 BBS、KW、EVENTURI..."
+>
 
-        <button onclick="calculateTotal()">計算總花費</button>
+<div class="category-buttons">
+
+    <button type="button" data-category-filter="all">
+        全部
+    </button>
+
+    <button type="button" data-category-filter="engine">
+        引擎／進氣
+    </button>
+
+    <button type="button" data-category-filter="exhaust">
+        排氣
+    </button>
+
+    <button type="button" data-category-filter="wheel">
+        輪圈／底盤
+    </button>
+
+    <button type="button" data-category-filter="exterior">
+        外觀／空力
+    </button>
+
+</div>
+
+
+    <div class="cost">
+        <label>
+            <input type="checkbox" class="mod-item" data-price="60000" data-category="engine">
+            EVENTURI進氣 - 60,000 元
+            </label>
+
+            <label>
+            <input type="checkbox" class="mod-item" data-price="53600" data-category="engine">
+            DO88加大中冷 - 53,600 元
+            </label>
+
+            <label>
+            <input type="checkbox" class="mod-item" data-price="109000" data-category="exterior">
+            CT Design碳纖維空力套件 - 109,000 元
+            </label>
+
+            <label>
+            <input type="checkbox" class="mod-item" data-price="250000" data-category="wheel">
+            BBS FIR 19吋鍛造鋁圈 - 250,000 元
+            </label>  
+            
+            <label>
+            <input type="checkbox" class="mod-item" data-price="27500" data-category="exterior">
+            karbel碳纖維後下擾流 - 27,500 元
+            </label>
+
+            <label>
+            <input type="checkbox" class="mod-item" data-price="46000" data-category="exhaust">
+            Milltek直通當派 - 46,000 元
+            </label>    
+
+            <label>
+            <input type="checkbox" class="mod-item" data-price="195000" data-category="exhaust">
+            AKRAPOVIC鈦合金中尾段排氣管 - 195,000 元
+            </label>    
+
+            <label>
+            <input type="checkbox" class="mod-item" data-price="92000" data-category="wheel"> 
+            KW V3避震器 - 92,000 元
+            </label>
+
+            <label>
+            <input type="checkbox" class="mod-item" data-price="104000" data-category="exterior">
+            CMST乾式蜂巢碳纖維引擎蓋 - 104,000 元
+            </label>
+
+            <br>
+
+            <button onclick="calculateTotal()">計算總花費</button>
 
         <h3 id="total">總計:0 元</h3>
 
     </div>
-    
+
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modsList = document.getElementById("mods-list");
+    const totalElement = document.getElementById("total");
+    const overviewTotal = document.getElementById("overview-total");
+    const modCount = document.getElementById("mod-count");
+    const searchInput = document.getElementById("searchInput");
+
+    const checkboxes = document.querySelectorAll(".mod-item");
+    const categoryButtons = document.querySelectorAll("[data-category-filter]");
+
+    let currentCategory = "all";
+
+
+    // 計算改裝總金額
+    function calculateTotal() {
+
+        let total = 0;
+
+        const selected = document.querySelectorAll(".mod-item:checked");
+
+        selected.forEach(function (mod) {
+            total += Number(mod.dataset.price) || 0;
+        });
+
+        totalElement.textContent =
+            "總計: " + total.toLocaleString() + " 元";
+
+        overviewTotal.textContent =
+            total.toLocaleString() + " 元";
+
+        modCount.textContent =
+            selected.length + " 項";
+    }
+
+
+    // 更新「我的改裝」
+    function updateModsList() {
+
+        modsList.innerHTML = "";
+
+        const selected = document.querySelectorAll(".mod-item:checked");
+
+        selected.forEach(function (mod) {
+
+            const li = document.createElement("li");
+
+            li.textContent =
+                mod.parentElement.textContent.trim();
+
+            modsList.appendChild(li);
+        });
+    }
+
+
+    // 搜尋 + 分類
+    function applyFilters() {
+
+        const keyword =
+            searchInput.value.toLowerCase().replace(/\s+/g, "");
+
+        checkboxes.forEach(function (mod) {
+
+            const label = mod.closest("label");
+
+            const text =
+                label.textContent.toLowerCase().replace(/\s+/g, "");
+
+            const categoryMatch =
+                currentCategory === "all" ||
+                mod.dataset.category === currentCategory;
+
+            const searchMatch =
+                keyword === "" ||
+                text.includes(keyword);
+
+            if (categoryMatch && searchMatch) {
+                label.style.display = "";
+            } else {
+                label.style.display = "none";
+            }
+        });
+    }
+
+
+    // 勾選改裝
+    checkboxes.forEach(function (checkbox) {
+
+        checkbox.addEventListener("change", function () {
+
+            calculateTotal();
+
+            updateModsList();
+        });
+    });
+
+
+    // 搜尋
+    searchInput.addEventListener("input", function () {
+
+        applyFilters();
+    });
+
+
+    // 分類按鈕
+    categoryButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            currentCategory =
+                button.dataset.categoryFilter;
+
+            applyFilters();
+        });
+    });
+
+
+    // 網頁第一次載入
+    calculateTotal();
+
+    updateModsList();
+
+    applyFilters();
+
+});
+</script>
+
     </body>
     </html>
